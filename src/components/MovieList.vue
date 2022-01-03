@@ -4,7 +4,7 @@
       <li v-for="(movie, i) in movies" :key="i">
         <a href="">
           <h4 class="hide">{{ movie.name }}</h4>
-          <span class="hide rate rate20">{{ rateMach[movie.rate] }}</span>
+          <span :class="`hide rate rate${movie.rate}`">{{ rateMach[movie.rate] }}</span>
           <strong class="rank">{{ i + 1 }}</strong>
           <img class="poster" :src="require(`../../${movie.src}`) " alt="남애의여름밤"/>
           <span class="desc">
@@ -21,6 +21,9 @@
 export default {
   name: 'MovieList',
   props: ['rateMach', 'movies'],
+  mounted() {
+    console.log(this.props)
+  },
   data() {
     return {
       

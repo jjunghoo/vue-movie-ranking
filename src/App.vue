@@ -24,7 +24,6 @@ export default {
   },
   data() {
     return {
-
       rateMach: {
         0: '전체관람가',
         12: '12세이상 관람가',
